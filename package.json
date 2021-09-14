@@ -1,0 +1,22 @@
+{
+  "name": "docsearch-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:algolia/docsearch-scraper.git",
+  "author": "siriwatknp <siriwatkunaporn@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "16.9.1",
+    "@types/yargs": "17.0.2",
+    "dotenv": "10.0.0",
+    "puppeteer": "10.2.0",
+    "rimraf": "3.0.2",
+    "ts-node": "10.2.1",
+    "typescript": "4.4.3",
+    "yargs": "17.1.1"
+  },
+  "scripts": {
+    "clean": "rimraf snapshots",
+    "collect": "ts-node generateSnapshots --rootDir snapshots --filename screenshot"
+  }
+}
