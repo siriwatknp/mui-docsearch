@@ -17,6 +17,6 @@
   },
   "scripts": {
     "clean": "rimraf snapshots",
-    "collect": "ts-node generateSnapshots --rootDir snapshots --filename screenshot"
+    "collect": "ts-node generateSnapshots --rootDir snapshots"
   }
 }

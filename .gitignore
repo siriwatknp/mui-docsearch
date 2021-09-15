@@ -1,4 +1,5 @@
 .DS_Store
+chromedriver
 crawling_data
 node_modules
 checker/node_modules

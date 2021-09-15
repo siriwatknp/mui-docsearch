@@ -3,16 +3,19 @@ import fsp from "fs/promises";
 import path from "path";
 import dotenv from "dotenv";
 import puppeteer from "puppeteer";
+// @ts-expect-error
+import keywords from "./keywords";
 
 const env = dotenv.config().parsed as {
   APPLICATION_ID: string;
   API_KEY: string;
 };
 
-const keywords = ["theme", "button"];
-
 async function run(argv: { filename?: string; rootDir?: string }) {
-  const { filename = "screenshot", rootDir = "./snapshots" } = argv;
+  const { filename, rootDir = "./snapshots" } = argv;
+  if (!filename) {
+    throw new Error("filename is required (--filename)");
+  }
   const browser = await puppeteer.launch({
     headless: false,
     defaultViewport: { width: 1024, height: 728 },
@@ -27,15 +30,16 @@ async function run(argv: { filename?: string; rootDir?: string }) {
   await page.type("input#indexName", "material-ui");
   await page.waitForTimeout(100);
 
-  await keywords.reduce(async (promise, keyword) => {
+  await (keywords as Array<string>).reduce(async (promise, keyword) => {
     await promise;
 
     // select all text and type
     await page.click("#q", { clickCount: 3 });
-    await page.type("#q", keyword);
+    await page.type("#q", keyword, { delay: 200 });
 
     // wait for the search result
     await page.waitForSelector(".algolia-docsearch-footer--logo");
+    await page.waitForTimeout(500);
 
     const dir = `${rootDir}/${keyword}`;
     try {

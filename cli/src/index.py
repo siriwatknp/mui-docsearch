@@ -135,6 +135,8 @@ def find_command(name, cmds):
 def run():
     help_needed = "--help" in sys.argv
 
+    print(environ['APPLICATION_ID'])
+
     if help_needed:
         del sys.argv[sys.argv.index("--help")]
 

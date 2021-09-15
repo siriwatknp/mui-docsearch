@@ -1,0 +1,33 @@
+{
+  "index_name": "material-ui",
+  "start_urls": [
+    "https://next.material-ui.com/"
+  ],
+  "stop_urls": [
+    "\\?expend-path",
+    "/components/data-grid/",
+    "/company/",
+    "/store/",
+    "/blog/",
+    "/zh/",
+    "/ru/",
+    "/pt/",
+    "/es/",
+    "/fr/",
+    "/de/",
+    "/ja/"
+  ],
+  "selectors": {
+    "lvl0": {
+      "selector": ".algolia-lvl0",
+      "global": true
+    },
+    "lvl1": ".markdown-body h1",
+    "lvl2": ".markdown-body h2",
+    "lvl3": ".markdown-body h3, .markdown-body table td:first-of-type",
+    "lvl4": ".markdown-body h4",
+    "text": ".markdown-body p, .markdown-body li, .markdown-body table td:last-child"
+  },
+  "only_content_level": true,
+  "nb_hits": 10030
+}
