@@ -75,13 +75,19 @@
         "tex",
       ];
       const App = () => {
+        const changes = 3;
         return (
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "max-content 1fr 1fr 1fr",
+              gridTemplateColumns: "max-content repeat(4, minmax(600px, 1fr))",
             }}
           >
+            <div class="head">Component/Test</div>
+            <div class="head">Current</div>
+            {[...Array(changes)].map((_, index) => (
+              <div class="head">Change {index + 1}</div>
+            ))}
             {keywords.map((k) => (
               <React.Fragment key={k}>
                 <div
@@ -89,24 +95,20 @@
                     alignSelf: "center",
                     padding: 16,
                     fontSize: 16,
-                    fontFamily:
-                      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
                   }}
                 >
                   {k}
                 </div>
                 <img
                   src={`./snapshots/${k}/current.jpg`}
-                  style={{ maxWidth: "140%" }}
+                  style={{ maxWidth: "100%" }}
                 />
-                <img
-                  src={`./snapshots/${k}/improve1.jpg`}
-                  style={{ maxWidth: "140%" }}
-                />
-                <img
-                  src={`./snapshots/${k}/improve2.jpg`}
-                  style={{ maxWidth: "140%" }}
-                />
+                {[...Array(changes)].map((_, index) => (
+                  <img
+                    src={`./snapshots/${k}/improve${index + 1}.jpg`}
+                    style={{ maxWidth: "100%" }}
+                  />
+                ))}
               </React.Fragment>
             ))}
           </div>
@@ -119,6 +121,14 @@
       body {
         margin: 0px;
         background-color: #fafafa;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+
+      .head {
+        padding: 1rem;
+        text-align: center;
       }
     </style>
   </body>

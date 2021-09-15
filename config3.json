@@ -332,10 +332,12 @@
     },
     "lvl1": ".markdown-body h1",
     "lvl2": ".markdown-body h2",
-    "lvl3": ".markdown-body h3, .markdown-body table td:first-of-type",
+    "lvl3": ".markdown-body h3",
     "lvl4": ".markdown-body h4",
-    "text": ".markdown-body p, .markdown-body li, .markdown-body table td:last-child"
+    "text": ".markdown-body p, .markdown-body li"
   },
-  "only_content_level": true,
-  "nb_hits": 9974
+  "selectors_exclude": [
+    ".css-1dpzd2p"
+  ],
+  "nb_hits": 7022
 }
