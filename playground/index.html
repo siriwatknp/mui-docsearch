@@ -19,8 +19,8 @@
       var process = { env: { NODE_ENV: "development" } }; // prevent crash on search
       docsearch({
         container: "#docsearch",
-        appId: window.APPLICATION_ID,
-        apiKey: window.API_KEY,
+        appId: window.APPLICATION_ID || "0TESSJGJEM",
+        apiKey: window.API_KEY || "d4436ad6894f8d0e3ea258c24b27040e",
         indexName: "material-ui",
       });
     </script>

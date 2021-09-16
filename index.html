@@ -80,35 +80,36 @@
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "max-content repeat(4, minmax(600px, 1fr))",
+              gridTemplateColumns: "max-content 1fr 1fr",
             }}
           >
-            <div class="head">Component/Test</div>
-            <div class="head">Current</div>
-            {[...Array(changes)].map((_, index) => (
-              <div class="head">Change {index + 1}</div>
-            ))}
+            <a
+              class="row-head"
+              href="https://gist.github.com/siriwatknp/316ec384b8631e9087c4f7930e5dc6f4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Keyword
+            </a>
+            <div class="head">Before</div>
+            <div class="head">
+              <div>After</div>
+              <p style={{ fontSize: 14 }}>
+                Remove <code>only_content_level: true</code> and add{" "}
+                <code>page_rank</code>
+              </p>
+            </div>
             {keywords.map((k) => (
               <React.Fragment key={k}>
-                <div
-                  style={{
-                    alignSelf: "center",
-                    padding: 16,
-                    fontSize: 16,
-                  }}
-                >
-                  {k}
-                </div>
+                <div class="row-head">{k}</div>
                 <img
                   src={`./snapshots/${k}/current.jpg`}
-                  style={{ maxWidth: "100%" }}
+                  style={{ maxWidth: "calc(100% - 16px)", margin: 8 }}
                 />
-                {[...Array(changes)].map((_, index) => (
-                  <img
-                    src={`./snapshots/${k}/improve${index + 1}.jpg`}
-                    style={{ maxWidth: "100%" }}
-                  />
-                ))}
+                <img
+                  src={`./snapshots/${k}/improve3.jpg`}
+                  style={{ maxWidth: "calc(100% - 16px)", margin: 8 }}
+                />
               </React.Fragment>
             ))}
           </div>
@@ -129,6 +130,18 @@
       .head {
         padding: 1rem;
         text-align: center;
+      }
+
+      .row-head {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9e9e9;
+      }
+
+      code {
+        background-color: yellow;
       }
     </style>
   </body>
