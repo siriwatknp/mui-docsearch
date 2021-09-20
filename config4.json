@@ -1,0 +1,39 @@
+{
+  "index_name": "material-ui",
+  "start_urls": [
+    {
+      "url": "https://deploy-preview-28485--material-ui.netlify.app/components/",
+      "page_rank": 16
+    },
+    "https://deploy-preview-28485--material-ui.netlify.app/"
+  ],
+  "stop_urls": [
+    "/components/data-grid/",
+    "/?expand-path",
+    "/company/",
+    "/store/",
+    "/blog/",
+    "/zh/",
+    "/ru/",
+    "/pt/",
+    "/es/",
+    "/fr/",
+    "/de/",
+    "/ja/"
+  ],
+  "selectors": {
+    "lvl0": {
+      "selector": ".algolia-lvl0",
+      "global": true
+    },
+    "lvl1": ".markdown-body h1",
+    "lvl2": ".markdown-body h2",
+    "lvl3": ".markdown-body h3",
+    "lvl4": ".markdown-body h4",
+    "text": ".markdown-body p, .markdown-body li"
+  },
+  "selectors_exclude": [
+    ".css-1a5wiu1"
+  ],
+  "nb_hits": 7091
+}

@@ -21,7 +21,12 @@
         container: "#docsearch",
         appId: window.APPLICATION_ID || "0TESSJGJEM",
         apiKey: window.API_KEY || "d4436ad6894f8d0e3ea258c24b27040e",
+        // apiKey: "1d8534f83b9b0cfea8f16498d19fbcab",
         indexName: "material-ui",
+        algoliaOptions: {
+          // #major-version-switch - Except changing this line you need to update https://github.com/algolia/docsearch-configs/blob/master/configs/material-ui.json
+          // facetFilters: ["version:master", "language:en"],
+        },
       });
     </script>
 

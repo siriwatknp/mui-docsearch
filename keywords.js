@@ -54,4 +54,12 @@ module.exports = [
   "slider",
   "date",
   "tex",
+  "every",
+  "loading",
+  "jumbo",
+  "checklist",
+  "expand",
+  "social",
+  "model",
+  "validation",
 ];
